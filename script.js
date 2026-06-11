@@ -13,13 +13,32 @@ const myLibrary = [
     }
 ];
 
-function Book() {
+function Book(title, author, pages, read) {
     // the constructor...
+    // safeguard
+    if (!new.target) {
+    throw Error("You must use the 'new' operator to call the constructor");
+  }
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+    this.info = function() {
+        readState = ''
+        if (this.read) {
+            readState = 'already read'
+        }else{
+            readState = 'not read yet'
+        }
+        bookInfo = `${this.title}, by ${this.author}, ${this.pages} pages, ${readState}`
+        return bookInfo
+    }
 }
 
-function addToLibrary(book) {
+function addToLibrary(bookTitle, author, pages, readStatus) {
+    // take params, create a book then store it in the array
+    book = new Book(bookTitle, author, pages, readStatus);
     myLibrary.push(book);
-    // do stuff here...
 }
 
 function displayBooks() {
