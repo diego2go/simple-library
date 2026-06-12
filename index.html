@@ -9,7 +9,39 @@
 <body class="limit-content">
     <header class="header">
         <h1>Simple Library</h1>
-        <button class="add">Add book</button>
+        <button class="button" command="show-modal" commandfor="add-book-dialog">New Book</button>
+        <dialog id="add-book-dialog">
+            <div class="row">
+                <h2 class="bookTitle row">New Book</h2>
+                <button commandfor="add-book-dialog" command="close" class="button row">Close</button>
+            </div>
+            <form class="add-book form-inputs" action="" method="dialog" >
+                <div class="row">
+                    <label for="book-info" class="dialog-label">Title</label>
+                    <input  clas="input-box" type="text" name="book-name" id="book-name" placeholder="48 Laws of Power" required>
+                </div>
+                <div class="row">
+                    <label for="book-info" class="dialog-label">Author</label>
+                    <input clas="input-box" type="text" name="book-author" id="book-author" placeholder="Robert Greene" required>
+                </div>
+                <div class="row">
+                    <label for="book-info" class="dialog-label">Pages</label>
+                    <input clas="input-box" type="number" name="book-pages" id="book-pages" placeholder="378" required>
+                </div>
+                <div class="row">
+                    <label class="dialog-label">Read?</label>
+                    <div class="row">
+                        <label for="book-info">Yes</label>
+                        <input type="radio" name="book-read-status" id="read">
+                    </div>
+                    <div class="row">
+                        <label for="book-read-status">No</label>
+                        <input type="radio" name="book-read-status" id="not-read">
+                    </div>
+                </div>
+                <input type="submit" class="button" value="Save">
+            </form> 
+        </dialog>
     </header>
     <main class="card-container">
         <div class="card">
