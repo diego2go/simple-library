@@ -33,6 +33,7 @@ function Book(title, author, pages, read) {
         bookInfo = `${this.title}, by ${this.author}, ${this.pages} pages, ${readState}`
         return bookInfo
     }
+    this.id = crypto.randomUUID()
 }
 
 function addToLibrary(bookTitle, author, pages, readStatus) {
