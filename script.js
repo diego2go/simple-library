@@ -1,22 +1,4 @@
 const myLibrary = [
-    {
-        title: 'Harry Potter',
-        author: 'J.K Rowling',
-        pages: 567,
-        read: true
-    },
-    {
-        title: 'Start with Why',
-        author: 'Simon Sinek',
-        pages: 400,
-        read: false
-    },
-    {
-        title: 'Atomic Habits',
-        author: 'James Clear',
-        pages: 580,
-        read: false
-    }
 ];
 
 function Book(title, author, pages, read) {
