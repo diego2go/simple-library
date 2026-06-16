@@ -55,7 +55,10 @@ function displayBooks() {
         const readStatus = document.createElement('li');
         readStatus.className = 'readStatus';
         readStatus.textContent = 'Read status: ' + book.read;
-
+        
+        // set up UUID to book card
+        bookContainer.setAttribute('data-id', book.id);
+        
         bookDetails.append(bookAuthor, pages, readStatus);
         bookContainer.append(bookTitle,bookDetails);
         cardContainer.append(bookContainer);
@@ -87,3 +90,13 @@ saveBtn.addEventListener('click', (event) => {
     
 }
     )
+
+    // TO DO 
+// 5. Use UUID to prevent displayBooks from showing up duplicated books.
+//  Add a button on each book’s display to remove the book from the library.
+//  You will need to associate your DOM elements with the actual book objects in some way.
+//  One easy solution is giving them a data-attribute that corresponds to the 
+//  unique id of the respective book object. 
+// 6. Add a button on each book’s display to change its read status. (idea, a toggle)
+//  To facilitate this you will want to create Book prototype function that 
+//  toggles a book instance’s read status.
