@@ -51,7 +51,7 @@ function addToLibrary(bookTitle, author, pages, readStatus) {
 const cardContainer = document.querySelector('.card-container')
 function displayBooks() {
     myLibrary.forEach((book) => {
-        
+        //add a way to avoid reloading books already on display...
         const bookContainer = document.createElement('div');
         bookContainer.className = 'card';
         
@@ -79,3 +79,23 @@ function displayBooks() {
         cardContainer.append(bookContainer);
     });
 }
+
+// set up event listener on submit and get data
+const saveBtn = document.querySelector('#save-button')
+const form = document.querySelector('.form-inputs')
+saveBtn.addEventListener('click', (event) => {
+    // prevent submit to server
+    event.preventDefault();
+    // get form data
+    const formData = new FormData(form);
+    // get entries
+    const obj = Object.fromEntries(formData);
+    // add to array
+    addToLibrary(obj.title, obj.author, obj.pages, obj.read);
+    console.log("Sucessfully added new book? Check array>", myLibrary);
+    // display books
+    displayBooks();
+    // reset form
+    form.reset();
+}
+    )
