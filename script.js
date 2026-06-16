@@ -68,16 +68,22 @@ const form = document.querySelector('.form-inputs')
 saveBtn.addEventListener('click', (event) => {
     // prevent submit to server
     event.preventDefault();
-    // get form data
-    const formData = new FormData(form);
-    // get entries
-    const obj = Object.fromEntries(formData);
-    // add to array
-    addToLibrary(obj.title, obj.author, obj.pages, obj.read);
-    console.log("Sucessfully added new book? Check array>", myLibrary);
-    // display books
-    displayBooks();
-    // reset form
-    form.reset();
+    // Check form data is valid before saving
+    if (form.checkValidity()) {
+        // get form data
+        const formData = new FormData(form);
+        // get entries
+        const obj = Object.fromEntries(formData);
+        // add to array
+        addToLibrary(obj.title, obj.author, obj.pages, obj.read);
+        console.log("Sucessfully added new book? Check array>", myLibrary);
+        // display books
+        displayBooks();
+        // reset form
+        form.reset();
+    } else {
+        form.reportValidity()
+    }
+    
 }
     )
