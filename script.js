@@ -97,7 +97,7 @@ function displayBooks() {
     } else {
         console.log('shownBooks was empty, 1st book saved')
         myLibrary.forEach((book) => {
-        //add a way to avoid reloading books already on display...
+       
         const bookContainer = document.createElement('div');
         bookContainer.className = 'card';
         
