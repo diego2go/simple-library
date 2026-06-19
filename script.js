@@ -40,9 +40,9 @@ function displayBooks() {
         const alreadyDisplayed = [];
         // get books IDs already displayed and push to array
         shownBooks.forEach((book) => {
-            console.log('This ID is already on display:', book.dataset.id)
+            // console.log('This ID is already on display:', book.dataset.id)
             alreadyDisplayed.push(book.dataset.id);
-            console.log('Pushed into alreadyDisplayed', alreadyDisplayed );
+            // console.log('Pushed into alreadyDisplayed', alreadyDisplayed );
         });
        // skip IDs alreadyDisplayed from myLibrary, copy the rest to toDisplay
        let toDisplay = [];
@@ -85,17 +85,22 @@ function displayBooks() {
             readStatus.className = 'readStatus';
             readStatus.textContent = 'Read status: ' + book.read;
             
+            //add remove btn to each new book
+            const removeBtn = document.createElement('button');
+            removeBtn.className = 'button';
+            removeBtn.textContent = 'Remove';
+
             // set up UUID to book card
             bookContainer.setAttribute('data-id', book.id);
             
-            bookDetails.append(bookAuthor, pages, readStatus);
+            bookDetails.append(bookAuthor, pages, readStatus, removeBtn);
             bookContainer.append(bookTitle,bookDetails);
             cardContainer.append(bookContainer);
         })
 
        // append those toDisplay into DOM
     } else {
-        console.log('shownBooks was empty, 1st book saved')
+        // console.log('shownBooks was empty, 1st book saved')
         myLibrary.forEach((book) => {
        
         const bookContainer = document.createElement('div');
@@ -119,11 +124,15 @@ function displayBooks() {
         const readStatus = document.createElement('li');
         readStatus.className = 'readStatus';
         readStatus.textContent = 'Read status: ' + book.read;
-        
+        //add remove btn to each new book
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'button';
+        removeBtn.textContent = 'Remove';
+
         // set up UUID to book card
         bookContainer.setAttribute('data-id', book.id);
         
-        bookDetails.append(bookAuthor, pages, readStatus);
+        bookDetails.append(bookAuthor, pages, readStatus, removeBtn);
         bookContainer.append(bookTitle,bookDetails);
         cardContainer.append(bookContainer);
     });
