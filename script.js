@@ -93,8 +93,8 @@ function displayBooks() {
             // set up UUID to book card
             bookContainer.setAttribute('data-id', book.id);
             
-            bookDetails.append(bookAuthor, pages, readStatus, removeBtn);
-            bookContainer.append(bookTitle,bookDetails);
+            bookDetails.append(bookAuthor, pages, readStatus);
+            bookContainer.append(bookTitle,bookDetails, removeBtn);
             cardContainer.append(bookContainer);
         })
 
@@ -132,8 +132,8 @@ function displayBooks() {
         // set up UUID to book card
         bookContainer.setAttribute('data-id', book.id);
         
-        bookDetails.append(bookAuthor, pages, readStatus, removeBtn);
-        bookContainer.append(bookTitle,bookDetails);
+        bookDetails.append(bookAuthor, pages, readStatus);
+        bookContainer.append(bookTitle,bookDetails, removeBtn);
         cardContainer.append(bookContainer);
     });
     } 
