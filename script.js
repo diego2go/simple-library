@@ -87,7 +87,7 @@ function displayBooks() {
             
             //add remove btn to each new book
             const removeBtn = document.createElement('button');
-            removeBtn.className = 'button';
+            removeBtn.className = 'button remove-book';
             removeBtn.textContent = 'Remove';
 
             // set up UUID to book card
@@ -126,7 +126,7 @@ function displayBooks() {
         readStatus.textContent = 'Read status: ' + book.read;
         //add remove btn to each new book
         const removeBtn = document.createElement('button');
-        removeBtn.className = 'button';
+        removeBtn.className = 'button remove-book';
         removeBtn.textContent = 'Remove';
 
         // set up UUID to book card
