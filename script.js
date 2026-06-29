@@ -85,23 +85,13 @@ function filterBooksToDisplay() {
     if (shownBooks.length > 0) {
         
         let toDisplay = [];
-        let displayedID = [];
-        shownBooks.forEach((book) => {
-            displayedID.push(book.dataset.id);
-        });
-
-        myLibrary.forEach((book) => {
-            for (id of displayedID) {
-                if (id !== book.id) {
-				    // console.log(`This ID ${id} is not equal to ${book.id}. So,
-                    // this book must get into toDisplay array`); 
-                    toDisplay.push(book);
-                    console.log('todisplay', toDisplay)
-                } else {
-                    return
-                }
-            }
-        });
+        // may still use when removing books...
+        // let displayedID = [];
+        // shownBooks.forEach((book) => {
+        //     displayedID.push(book.dataset.id);
+        // });
+        //simple version, just push the last one saved. TBD if it works when removing books...
+        toDisplay.push(myLibrary[myLibrary.length - 1]);
 
         console.log('returning', toDisplay);
         return toDisplay;
@@ -139,7 +129,6 @@ saveBtn.addEventListener('click', (event) => {
 
 
 // TO DO 
-//Still getting duplicates. Check if block...
 // 5. Add a button on each book’s display to remove the book from the library.
 //  You will need to associate your DOM elements with the actual book objects in some way.
 //  One easy solution is giving them a data-attribute that corresponds to the 
