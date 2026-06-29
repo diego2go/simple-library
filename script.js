@@ -33,9 +33,7 @@ function addToLibrary(bookTitle, author, pages, readStatus) {
 const cardContainer = document.querySelector('.card-container')
 function displayBooks() {
     // call filterBooksToDisplay, return array...
-    console.log('calling filterBooks...')
     let libraryToDisplay = filterBooksToDisplay();
-    console.log('about to display:', libraryToDisplay);
    
     libraryToDisplay.forEach((book) => {
        
@@ -76,11 +74,8 @@ function displayBooks() {
 
 // get books already shown, and return array of books to display
 function filterBooksToDisplay() {
-    //already shown:
-    console.log('filtering books to display')
     //get ids shown
     const shownBooks = document.querySelectorAll('[data-id]');
-    console.log('Ids on page:', shownBooks);
    
     if (shownBooks.length > 0) {
         
