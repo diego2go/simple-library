@@ -88,7 +88,6 @@ function filterBooksToDisplay() {
         //simple version, just push the last one saved. TBD if it works when removing books...
         toDisplay.push(myLibrary[myLibrary.length - 1]);
 
-        console.log('returning', toDisplay);
         return toDisplay;
 
     // otherwise return myLibrary
@@ -120,6 +119,7 @@ saveBtn.addEventListener('click', (event) => {
     
 }
     )
+
 
 
 
