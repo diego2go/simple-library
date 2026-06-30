@@ -116,18 +116,32 @@ saveBtn.addEventListener('click', (event) => {
     } else {
         form.reportValidity()
     }
-    
-}
+    }
     )
 
+cardContainer.addEventListener('click', (e) => {
+    //listen for clicks on .remove-book buttons only.
+    if (e.target.classList.contains('remove-book')) {
+        //get parent to remove:
+        let parentRemove = e.target.parentNode;
+        removeBook(parentRemove);
+    }
+})
+// live collection of remove buttons:
+const removeBtns = document.getElementsByClassName('remove-book');
 
+function removeBook (item) {
+    let idOnDisplay = item.dataset.id;
+    myLibrary.forEach((book) => {
+        if (book.id == idOnDisplay) {
+            myLibrary.splice(myLibrary.indexOf(book), 1);
+            item.remove();
+        };
+    });
+}
 
 
 // TO DO 
-// 5. Add a button on each book’s display to remove the book from the library.
-//  You will need to associate your DOM elements with the actual book objects in some way.
-//  One easy solution is giving them a data-attribute that corresponds to the 
-//  unique id of the respective book object. 
 // 6. Add a button on each book’s display to change its read status. (idea, a toggle)
 //  To facilitate this you will want to create Book prototype function that 
 //  toggles a book instance’s read status.
