@@ -22,6 +22,10 @@ function Book(title, author, pages, read) {
         return bookInfo
     }
     this.id = crypto.randomUUID()
+    this.toggleReadStatus = function() {
+        if (this.read == 'Read') this.read = 'Not read'
+        else this.read = 'Read'
+    }
 }
 
 function addToLibrary(bookTitle, author, pages, readStatus) {
@@ -58,11 +62,23 @@ function displayBooks() {
         const readStatus = document.createElement('li');
         readStatus.className = 'readStatus';
         readStatus.textContent = 'Read status: ' + book.read;
+
+        // append toggle switch to each new book
+        const labelSwitch = document.createElement('label');
+        const checkBox = document.createElement('input');
+        const toggleSpan = document.createElement('span');
+
+        toggleSpan.className = 'slider round';
+        checkBox.type = 'checkbox';
+        labelSwitch.className = 'switch';
+        labelSwitch.append(checkBox, toggleSpan);
+        // append label to read li...
+        readStatus.append(labelSwitch);
         //add remove btn to each new book
         const removeBtn = document.createElement('button');
         removeBtn.className = 'button remove-book';
         removeBtn.textContent = 'Remove';
-
+        
         // set up UUID to book card
         bookContainer.setAttribute('data-id', book.id);
         
@@ -145,3 +161,6 @@ function removeBook (item) {
 // 6. Add a button on each book’s display to change its read status. (idea, a toggle)
 //  To facilitate this you will want to create Book prototype function that 
 //  toggles a book instance’s read status.
+// Set up toggle to change read status
+// on click event, trigger that book.toggleReadStatus()
+// Then update the displayed book read status.
