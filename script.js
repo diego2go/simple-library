@@ -143,8 +143,6 @@ cardContainer.addEventListener('click', (e) => {
         removeBook(parentRemove);
     }
 })
-// live collection of remove buttons:
-const removeBtns = document.getElementsByClassName('remove-book');
 
 function removeBook (item) {
     let idOnDisplay = item.dataset.id;
