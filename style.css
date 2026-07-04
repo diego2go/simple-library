@@ -53,12 +53,23 @@ body{
     border-radius: 5px;
     max-width: 400px;
     padding: 10px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .bookDetails{
     list-style: none;
 }
 
+.bookDetails li {
+    padding: 5px 0;
+}
+
+.readStatus {
+    display:flex;
+    justify-content: space-between;
+}
 .footer{
     padding: 25px 0;
     color: #ebebeb;
