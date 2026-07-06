@@ -144,6 +144,18 @@ cardContainer.addEventListener('click', (e) => {
         //get parent to remove:
         let parentRemove = e.target.parentNode;
         removeBook(parentRemove);
+    };
+    // listen for readStatus slider
+    if (e.target.classList.contains('slider')) {
+        //get book ID to change status
+        let toggleBookID = e.target.closest('.card').dataset.id;
+        // get library index of that ID
+        let i = myLibrary.findIndex(book => book.id === toggleBookID);
+        // toggle status
+        myLibrary[i].toggleReadStatus();
+        // change displayed status
+        let readStatus = e.target.parentNode.previousElementSibling;
+        readStatus.innerText = myLibrary[i].read;
     }
 })
 
