@@ -61,7 +61,10 @@ function displayBooks() {
   
         const readStatus = document.createElement('li');
         readStatus.className = 'readStatus';
-        readStatus.textContent = 'Read status: ' + book.read;
+        readStatus.textContent = 'Read status: '
+        const readLabel = document.createElement('span');
+        readLabel.className = 'readLabel';
+        readLabel.textContent = book.read;
 
         // append toggle switch to each new book
         const labelSwitch = document.createElement('label');
@@ -73,7 +76,7 @@ function displayBooks() {
         labelSwitch.className = 'switch';
         labelSwitch.append(checkBox, toggleSpan);
         // append label to read li...
-        readStatus.append(labelSwitch);
+        readStatus.append(readLabel, labelSwitch);
         //add remove btn to each new book
         const removeBtn = document.createElement('button');
         removeBtn.className = 'button remove-book';

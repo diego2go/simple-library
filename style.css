@@ -66,11 +66,11 @@ body{
     padding: 5px 0;
 }
 
-.readStatus {
+/* .readStatus {
     display:flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 .footer{
     padding: 25px 0;
     color: #ebebeb;
@@ -126,6 +126,7 @@ input {
     display: inline-block;
     width: 40px;
     height: 20px;
+    margin-left: 40px;
 }
 
 /* Hide default HTML checkbox */
