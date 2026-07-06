@@ -51,7 +51,7 @@ body{
 .card{
     background-color: #ebebeb;
     border-radius: 5px;
-    max-width: 400px;
+    max-width: 350px;
     padding: 10px 25px;
     display: flex;
     flex-direction: column;
