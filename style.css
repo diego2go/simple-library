@@ -115,7 +115,6 @@ body{
 }
 
 input {
-    height: 32px;
     border-radius: 5px;
     border: 1px solid lightgray;
     padding: 7px 5px;
