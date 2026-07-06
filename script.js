@@ -61,7 +61,7 @@ function displayBooks() {
   
         const readStatus = document.createElement('li');
         readStatus.className = 'readStatus';
-        readStatus.textContent = 'Read status: '
+        readStatus.textContent = 'Status: '
         const readLabel = document.createElement('span');
         readLabel.className = 'readLabel';
         readLabel.textContent = book.read;
