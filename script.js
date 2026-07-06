@@ -97,18 +97,9 @@ function filterBooksToDisplay() {
     const shownBooks = document.querySelectorAll('[data-id]');
    
     if (shownBooks.length > 0) {
-        
         let toDisplay = [];
-        // may still use when removing books...
-        // let displayedID = [];
-        // shownBooks.forEach((book) => {
-        //     displayedID.push(book.dataset.id);
-        // });
-        //simple version, just push the last one saved. TBD if it works when removing books...
         toDisplay.push(myLibrary[myLibrary.length - 1]);
-
         return toDisplay;
-
     // otherwise return myLibrary
     }else {
         return myLibrary
@@ -171,9 +162,4 @@ function removeBook (item) {
 
 
 // TO DO 
-// 6. Add a button on each book’s display to change its read status. (idea, a toggle)
-//  To facilitate this you will want to create Book prototype function that 
-//  toggles a book instance’s read status.
-// Set up toggle to change read status
-// on click event, trigger that book.toggleReadStatus()
-// Then update the displayed book read status.
+// Sync toggle with read status
