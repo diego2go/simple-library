@@ -73,6 +73,12 @@ function displayBooks() {
 
         toggleSpan.className = 'slider round';
         checkBox.type = 'checkbox';
+        //if read true, set checkbox input attribute to checked
+        if (book.read === 'Read') {
+            checkBox.checked = true
+        }else {
+            checkBox.checked = false
+        }
         labelSwitch.className = 'switch';
         labelSwitch.append(checkBox, toggleSpan);
         // append label to read li...
